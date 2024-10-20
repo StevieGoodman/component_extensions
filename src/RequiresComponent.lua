@@ -1,11 +1,11 @@
 local Waiter = require(script.Parent.Parent.Waiter)
 
-return function(requiredComponent)
+return function(requiredComponent, getCandidatesFn: (Instance) -> {Instance}, predicate: ((Instance) -> boolean)?)
     return {
-        ShouldConstruct = function(component, candidates: {Instance}?, predicate: ((Instance) -> boolean)?)
+        ShouldConstruct = function(component)
             local instance =
-                if candidates ~= nil and predicate ~= nil
-                then Waiter.getFirst(candidates, predicate)
+                if getCandidatesFn ~= nil and predicate ~= nil
+                then Waiter.getFirst(getCandidatesFn(component.Instance), predicate)
                 else component.Instance
             instance:AddTag(requiredComponent.Tag)
             local success, _ = requiredComponent:WaitForInstance(requiredComponent, instance)

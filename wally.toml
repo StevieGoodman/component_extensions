@@ -1,13 +1,13 @@
 [package]
 name = "steviegoodman/component-extensions"
 description = "A collection of utility extensions for sleitnick's Component package."
-version = "1.0.0"
+version = "1.0.1"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 exclude = ["**"]
 include = [
     "src",
-    "src/init.lua",
+    "src/*.lua",
     "wally.toml",
     "default.project.json",
 ]
