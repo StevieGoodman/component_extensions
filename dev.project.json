@@ -1,25 +1,20 @@
 {
-    "name": "Unnamed Package",
+    "name": "Component Extensions",
 
     "tree": {
         "$className": "DataModel",
 
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
-            "$path": "ReplicatedStorage",
-            "Package": {
-                "$path": "src",
-                "Packages": {
-                    "$path": "Packages"
+            "Packages": {
+                "$path": "Packages",
+                "ComponentExtensions": {
+                    "$path": "src"
                 },
                 "DevPackages": {
                     "$path": "DevPackages"
                 }
             }
-        },
-        "ServerScriptService": {
-            "$className": "ServerScriptService",
-            "$path": "ServerScriptService"
         }
     }
 }

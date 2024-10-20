@@ -1,10 +1,16 @@
 [package]
-name = "steviegoodman/library-name"
-description = "No description provided."
+name = "steviegoodman/component-extensions"
+description = "A collection of utility extensions for sleitnick's Component package."
 version = "1.0.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+exclude = ["**"]
+include = [
+    "src",
+    "src/init.lua",
+    "wally.toml",
+    "default.project.json",
+]
 
-[dev-dependencies]
-TestEz = "roblox/testez@0.4.1"
-TableUtil = "sleitnick/table-util@1.2.0"
+[dependencies]
+Waiter = "steviegoodman/waiter@7.0.0"

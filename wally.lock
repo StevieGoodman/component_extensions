@@ -3,6 +3,11 @@
 registry = "test"
 
 [[package]]
+name = "evaera/promise"
+version = "4.0.0"
+dependencies = []
+
+[[package]]
 name = "roblox/testez"
 version = "0.4.1"
 dependencies = []
@@ -13,6 +18,11 @@ version = "1.2.1"
 dependencies = []
 
 [[package]]
-name = "steviegoodman/library-nmae"
+name = "steviegoodman/component-extensions"
 version = "1.0.0"
-dependencies = [["TableUtil", "sleitnick/table-util@1.2.1"], ["TestEz", "roblox/testez@0.4.1"]]
+dependencies = [["Waiter", "steviegoodman/waiter@7.0.0"], ["TestEz", "roblox/testez@0.4.1"]]
+
+[[package]]
+name = "steviegoodman/waiter"
+version = "7.0.0"
+dependencies = [["Promise", "evaera/promise@4.0.0"], ["TableUtil", "sleitnick/table-util@1.2.1"]]
