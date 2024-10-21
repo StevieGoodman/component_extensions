@@ -1,6 +1,6 @@
 local Waiter = require(script.Parent.Parent.Waiter)
 
-return function(requiredComponent, getCandidatesFn: (Instance) -> {Instance})
+return function(requiredComponent, getCandidatesFn: ((Instance) -> {Instance})?)
     return {
         ShouldConstruct = function(component)
             local instance =
@@ -9,7 +9,7 @@ return function(requiredComponent, getCandidatesFn: (Instance) -> {Instance})
                 else component.Instance
             assert(instance ~= nil, `Failed to find required instance with tag "{requiredComponent.Tag}". ({component.Instance:GetFullName()})`)
             instance:AddTag(requiredComponent.Tag)
-            local success, _ = requiredComponent:WaitForInstance(requiredComponent, instance)
+            local success, _ = requiredComponent:WaitForInstance(instance)
                 :andThen(function(requiredComponentInstance)
                     component._components = component._components or {}
                     component._components[requiredComponent.Tag] = requiredComponentInstance
